@@ -15,16 +15,20 @@ import java.io.IOException;
 public class DashboardServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
+        String data = (String) req.getAttribute("data");
+        System.out.println(data);
+/*
         Staff loginStaff = (Staff) req.getSession().getAttribute("loginStaff");
 
         if (loginStaff == null) {
             req.getRequestDispatcher(req.getContextPath() + "/login.jsp?error=log_in_first").forward(req, resp); // 如果用户没有登录，则重定向到登录页面
         } else {
-            Role staffRole = new RoleService().getById(loginStaff.getRole_id()); // 获取登录用户的角色信息
-
             req.getSession().setAttribute("loginStaff", loginStaff);
-
             req.getRequestDispatcher("/dashboard.jsp").forward(req, resp); // 如果用户已经登录，则进行页面的渲染
         }
+
+
+        */
     }
 }

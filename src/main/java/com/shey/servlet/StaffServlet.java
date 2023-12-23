@@ -22,6 +22,12 @@ public class StaffServlet extends HttpServlet {
         req.setCharacterEncoding("utf-8");
         resp.setCharacterEncoding("utf-8");
 
+
+        String data = (String) req.getAttribute("data");
+        System.out.println(data);
+
+/*
+
         String flag = req.getParameter("flag");
 
         switch (flag) {
@@ -49,6 +55,7 @@ public class StaffServlet extends HttpServlet {
             }
             case "detail_back" -> resp.sendRedirect(req.getContextPath() + "/dashboard");
         }
+        */
     }
 
     private static Staff getStaff(HttpServletRequest req) {
